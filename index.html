@@ -14,7 +14,63 @@
             document.getElementById('exibir-execucao').innerHTML += '----------- Início do jogo -----------';
             document.getElementById('exibir-execucao').innerHTML += '<pre>' + campoMinado.Tabuleiro() + '</pre>';
             
-            // Realize sua codificação a partir deste ponto, boa sorte!
+            function getMatriz(){
+
+                let linhas = 9; 
+                let colunas = 9; 
+                let matriz = new Array(colunas); 
+                let Tabuleiro = campoMinado.Tabuleiro();
+                let tabuleiroSplit = campoMinado.Tabuleiro().replaceAll("\n","").split("\r");
+            
+                for (let i = 0; i < tabuleiroSplit.length; i++) {
+                    matriz[i] = new Array(linhas); 
+                    let stringSlice =  Array.from(tabuleiroSplit[i]);
+                    
+                    for (let j = 0; j < stringSlice.length; j++) {  
+                        
+                        // aqui vc tem todos os valores 
+                        matriz[i][j] = stringSlice[j]
+                    }
+                }
+                return matriz;
+
+            }
+              // Um número pseudo-aleatório entre 0 (inclusivo) e 1 (exclusivo).
+               function getMatriz(){
+                   const random = (num) => Math.floor(Math.random() * num) ;
+                   console.log(random(3));
+               }
+        
+            document.getElementById('exibir-execucao').innerHTML += '----------- Jogo em aberto -----------';
+            document.getElementById('exibir-execucao').innerHTML += '<pre>' + campoMinado.Tabuleiro() + '</pre>';
+
+            campoMinado.Abrir(6,9)
+
+            document.getElementById('exibir-execucao').innerHTML += '----------- Jogo em aberto -----------';
+            document.getElementById('exibir-execucao').innerHTML += '<pre>' + campoMinado.Tabuleiro() + '</pre>';
+
+            campoMinado.Abrir(8,6)
+
+            document.getElementById('exibir-execucao').innerHTML += '----------- vitoria -----------';
+            document.getElementById('exibir-execucao').innerHTML += '<pre>' + campoMinado.Tabuleiro() + '</pre>';
+            
+            
+            let current =0
+            let currentField=1
+
+            function campominado(linhas, colunas){
+                let filledfield  = []
+                const len = linhas.length
+                for(let i = 0; i<len; i++){
+                    let linha =[]
+                    for (let j=0; j<colunas; j++){
+                    if(linha[i].charAt(j)==='*'){
+                        console.log('mine')
+                    }
+                }
+            }
+               console.log(field[i])
+            }
         </script>
     </body>
 </html>
